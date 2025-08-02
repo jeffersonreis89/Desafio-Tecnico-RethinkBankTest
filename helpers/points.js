@@ -16,8 +16,15 @@ async function getExtrato(token) {
     .set('Authorization', `Bearer ${token}`);
 }
 
+// GET /points/saldo
+async function getBalance(token) {
+  return await request(apiBaseUrl)
+    .get('/points/saldo')
+    .set('Authorization', `Bearer ${token || ''}`);
+}
 
 module.exports = {
   sendPoints,
-  getExtrato
+  getExtrato,
+  getBalance
 };
