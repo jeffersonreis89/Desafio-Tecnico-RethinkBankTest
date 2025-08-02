@@ -51,7 +51,24 @@ const buildUserWithPasswordMismatch = () => {
   return user;
 };
 
+const buildUserNotRegistered = () => {
+  const user = buildUserPayload();
+  user.email = `naoexiste_${Date.now()}@example.com`; // garante único
+  return user;
+};
+
+const buildUserWithWrongPassword = () => {
+  const user = buildUserPayload();
+  user.wrongPassword = 'SenhaErrada@123';
+  return user;
+};
+
+const buildUnconfirmedUser = () => {
+  return buildUserPayload();
+};
+
 module.exports = {
+  //Cadastro
   buildUserWithShortCPF,
   buildUserWithCpfLetters,
   buildUserWithShortName,
@@ -60,4 +77,8 @@ module.exports = {
   buildUserWithPasswordNoUpperCase,
   buildUserWithShortPassword,
   buildUserWithPasswordMismatch,
+  //Login
+  buildUserNotRegistered,
+  buildUserWithWrongPassword,
+  buildUnconfirmedUser,
 };
