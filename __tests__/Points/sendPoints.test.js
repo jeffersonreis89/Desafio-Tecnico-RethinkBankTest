@@ -52,4 +52,14 @@ describe('Points - Enviar Pontos', () => {
     expect(res.status).toBe(404);
     expect(res.body.error).toBe('Usuário destino não encontrado');
   });
+
+    it('deve retornar 400 quando o saldo for insuficiente', async () => {
+    const res = await sendPoints(token, {
+      recipientCpf: recipientUser.cpf,
+      amount: 300, 
+    });
+
+    expect(res.status).toBe(400);
+    expect(res.body.error).toBe('Saldo insuficiente');
+  });
 });
