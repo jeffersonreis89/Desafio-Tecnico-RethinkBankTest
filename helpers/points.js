@@ -9,6 +9,15 @@ async function sendPoints(token, { recipientCpf, amount }) {
     .send({ recipientCpf, amount });
 }
 
+// GET /points/extrato
+async function getExtrato(token) {
+  return await request(apiBaseUrl)
+    .get('/points/extrato')
+    .set('Authorization', `Bearer ${token}`);
+}
+
+
 module.exports = {
   sendPoints,
+  getExtrato
 };
