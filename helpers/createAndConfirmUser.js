@@ -1,4 +1,4 @@
-const { registerUser, confirmUserEmail } = require('./auth');
+const { registerUser, confirmUserEmail, loginUser } = require('./auth');
 const buildUserPayload = require('./buildUserPayload');
 
 async function createAndConfirmUser() {
@@ -9,7 +9,13 @@ async function createAndConfirmUser() {
 
   await confirmUserEmail(confirmToken);
 
-  return userPayload; // retorna o payload pronto para login
+
+  const resLogin = await loginUser({ email: userPayload.email, password: userPayload.password });
+
+  return {
+    ...userPayload,
+    token: resLogin.body.token,
+  };
 }
 
 module.exports = createAndConfirmUser;

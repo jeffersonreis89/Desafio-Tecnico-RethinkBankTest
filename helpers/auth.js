@@ -22,8 +22,17 @@ async function loginUser(credentials) {
     .send(credentials);
 }
 
+// DELETE /account
+async function deleteAccount(token, password) {
+  return await request(apiBaseUrl)
+    .delete('/account')
+    .set('Authorization', `Bearer ${token}`)
+    .send({ password });
+}
+
 module.exports = {
   registerUser,
   confirmUserEmail,
-  loginUser
+  loginUser,
+  deleteAccount
 };
