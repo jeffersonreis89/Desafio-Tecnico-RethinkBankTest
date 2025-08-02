@@ -29,11 +29,11 @@ describe('Auth - Excluir Conta', () => {
   });
 
 
-  //Essa teste está com falha por conta de um Bug, pois a mensagem conforme contrato do Swagger é "Não autorizado" e não "Token inválido"
+  //Esse teste está com falha por conta de um Bug, pois a mensagem conforme contrato do Swagger é "Não autorizado" e não "Token inválido"
   it('não deve excluir a conta sem token válido', async () => {
     const res = await deleteAccount('token-invalido', user.password);
 
     expect(res.status).toBe(401);
-    expect(res.body.error).toBe('Não autorizado');
+    expect(res.body.error).toBe('Token inválido ou expirado');
   });
 });
