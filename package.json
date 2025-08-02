@@ -1,0 +1,26 @@
+{
+  "name": "desafio-tecnico-rethinkbanktest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeffersonreis89/Desafio-Tecnico-RethinkBankTest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeffersonreis89/Desafio-Tecnico-RethinkBankTest/issues"
+  },
+  "homepage": "https://github.com/jeffersonreis89/Desafio-Tecnico-RethinkBankTest#readme",
+  "description": "",
+  "dependencies": {
+    "@faker-js/faker": "^9.9.0",
+    "faker-js": "^1.0.0",
+    "jest": "^30.0.5",
+    "supertest": "^7.1.4"
+  }
+}
