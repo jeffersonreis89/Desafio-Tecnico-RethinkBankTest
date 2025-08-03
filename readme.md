@@ -27,7 +27,7 @@ Os testes estão organizados em pastas por funcionalidade, por exemplo:
 
 Cada arquivo de teste cobre endpoints específicos, validando tanto os fluxos positivos quanto os fluxos de erro para garantir a robustez do sistema.
 
-> Dentro do projeto, há uma pasta dedicada que contém os cenários de testes escritos no formato BDD Gherkin. Esses cenários servem como base e referência para a criação das automações, facilitando o desenvolvimento e garantindo maior clareza no entendimento de cada caso de teste.
+> Dentro do projeto, há uma pasta dedicada **(CenárioDeTeste)** que contém os cenários de testes escritos no formato BDD Gherkin. Esses cenários servem como base e referência para a criação das automações, facilitando o desenvolvimento e garantindo maior clareza no entendimento de cada caso de teste.
 
 ## Como rodar os testes
 
